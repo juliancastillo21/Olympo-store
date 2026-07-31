@@ -61,11 +61,6 @@ function Admin() {
 
   return (
     <div className="space-y-12 py-8">
-      <SectionHeader
-        pretitle="Acceso Exclusivo"
-        title="Portal Administrativo"
-        children="Ingresa tus credenciales para acceder al panel de control de OLIMPO."
-      />
       <div className="mx-auto max-w-lg rounded-[2.5rem] border border-[#D4AF37]/30 bg-black/70 p-8 sm:p-10 backdrop-blur-xl shadow-[0_40px_120px_-60px_rgba(212,175,55,0.3)]">
         <div className="mb-6 flex justify-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.2)]">
