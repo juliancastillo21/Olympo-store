@@ -16,7 +16,7 @@ function AppRoutes() {
       <Route path="" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="catalog" element={<Catalog />} />
-        <Route path="product/:id" element={<Product />} />
+        <Route path="product/:slug" element={<Product />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="cart" element={<Cart />} />
