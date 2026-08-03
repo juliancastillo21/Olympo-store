@@ -343,10 +343,6 @@ export default function CreateProduct() {
                 Galería de Imágenes (Opcional)
               </h3>
 
-              <p className="text-xs leading-relaxed text-white/60">
-                Puedes subir imágenes ahora o hacerlo más adelante. Si subes imágenes, se guardarán en Cloudflare R2 y se vincularán a este producto.
-              </p>
-
               {/* Uploader */}
               <ImageUploader onUploadComplete={handleUploadComplete} autoReset={true} />
 
