@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 import { uploadProductImage } from '../../services/uploadService.js'
 import { FiUploadCloud, FiImage, FiCheckCircle } from 'react-icons/fi'
 
-function ImageUploader({ onUploadComplete }) {
+function ImageUploader({ onUploadComplete, autoReset = false }) {
   const [isUploading, setIsUploading] = useState(false)
   const [uploadedUrl, setUploadedUrl] = useState(null)
   const [dragActive, setDragActive] = useState(false)
@@ -48,10 +48,14 @@ function ImageUploader({ onUploadComplete }) {
 
     try {
       const url = await uploadProductImage(file)
-      setUploadedUrl(url)
       toast.success('¡Imagen subida con éxito!', { id: loadingToast })
       if (onUploadComplete) {
         onUploadComplete(url)
+      }
+      if (autoReset) {
+        setUploadedUrl(null)
+      } else {
+        setUploadedUrl(url)
       }
     } catch (error) {
       toast.error(`Error: ${error.message}`, { id: loadingToast })

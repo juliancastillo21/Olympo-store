@@ -7,15 +7,15 @@ export async function getCategories() {
   const { data, error } = await supabase
     .from('categories')
     .select('*')
-    .eq('is_active', true)
-    .order('created_at', { ascending: true })
+    .order('name', { ascending: true })
 
   if (error) {
-    console.error('Error fetching categories:', error)
+    console.error('Error fetching categories from Supabase:', error)
     return []
   }
 
-  return data
+  // Filtrar si existe la propiedad is_active y es explícitamente false
+  return (data || []).filter((cat) => cat.is_active !== false)
 }
 
 /**
